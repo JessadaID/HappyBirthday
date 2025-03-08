@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สุขสันต์วันเกิด❤️</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .balloon {
+            position: absolute;
+            width: 40px;
+            height: 50px;
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+        .heart {
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .cake {
+            animation: wiggle 2s ease-in-out infinite;
+        }
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+        .photos-container {
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+        .photo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .photo.active {
+            opacity: 1;
+        }
+        .photo-frame {
+            max-width: 80%;
+            max-height: 100%;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border: 10px solid white;
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            border-radius: 0;
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Header -->
+    <div class="relative pt-4 pb-2">
+        <h1 class="text-center text-4xl md:text-5xl font-bold text-pink-800 animate__animated animate__bounceIn">สุขสันต์วันเกิด<span class="heart text-pink-600">❤️</span></h1>
+        <h2 class="text-center text-2xl md:text-3xl font-semibold text-pink-700 mt-2 animate__animated animate__fadeIn animate__delay-1s">*--ฝน--*</h2>
+    </div>
+
+    <!-- Balloon decorations -->
+    <div id="balloons" class="absolute top-0 left-0 w-full h-full pointer-events-none">
+        <!-- Balloons will be added here by JavaScript -->
+    </div>
+
+    <!-- Main content -->
+    <div class="container mx-auto px-4 py-6">
+        <!-- Photos slideshow -->
+        <div class="photos-container mx-auto rounded-xl bg-white bg-opacity-70 shadow-xl p-4 mb-8">
+            <div class="photo active">
+                <img src="https://scontent.fcnx4-2.fna.fbcdn.net/v/t39.30808-1/476797617_1784091165489337_6107816284253003859_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=109&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeEuyEQg9QUU_bp7q5LLfVE51VCIgRkj2NvVUIiBGSPY2-RTt5Wp6I0MPBi9T38oj28f-ayfQ2zGDwBXwAuOcm-l&_nc_ohc=oA3jPxJ6e2wQ7kNvgHg2Soq&_nc_oc=AdjWAMyWoDqJcP6rc6yJ8R2y8hoMNVC7mXVD7uu_pu0y20PXjMOPSHJksAae4D6F2imvPbLzqlt59aASq-JFaIMl&_nc_zt=24&_nc_ht=scontent.fcnx4-2.fna&_nc_gid=AlGUUTnAluAeHnqh0l_ZAAh&oh=00_AYFIv6PMIUsL6QocEt72zRq1ctBDen8OY0j5AVsneCAbwQ&oe=67D2365A" alt="รูปเรา" class="photo-frame rounded-lg">
+            </div>
+            <div class="photo">
+                <img src="https://scontent.fcnx4-2.fna.fbcdn.net/v/t39.30808-6/431624677_1555805551651234_3785236911736378063_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFmpV45xDnAcKMbpxs15WHwIbhTb3u56LIhuFNve7nosh-msAtMZh4RRTnzU8pdTgVNMsFfRUhqkV11aIvrnQXj&_nc_ohc=cG5W16zSRtoQ7kNvgE6WEbo&_nc_oc=Adhx13Z0OX8wPQjQXzBCIG-yIt5JrP6lB4u44UOIz9ZyQwZyPBRxheInt-gtu90lUsZhVrjCbqfQqJarxzq8YkN2&_nc_zt=23&_nc_ht=scontent.fcnx4-2.fna&_nc_gid=AnCtHYbhr1GKgIL99NFPiId&oh=00_AYFCP0DLj2a7Aav1AVRQbD51sxhV8zkrbOyI73u2qhUItQ&oe=67D22F9B" alt="รูปเรา" class="photo-frame rounded-lg">
+            </div>
+            <div class="photo">
+                <img src="https://scontent.fcnx4-1.fna.fbcdn.net/v/t39.30808-6/475371540_1775028903062230_8227621067286237105_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=669761&_nc_eui2=AeGJRJnWUlqA4otmea6_tx7ydGjgvOxNV4d0aOC87E1Xh4GDrm54NJcYoeCpGq1lMyuWLrRh2m2g-JkQLuGCi90p&_nc_ohc=IpLH3U3uVsUQ7kNvgGMX61Z&_nc_oc=Adixye9jkEG-sdnqalAylAD8W4prATY7D9CLywkrE7waHQN3q3SnOmmYaFO0fjfBhPOm0gGxv7L6fGr-I42cZYZV&_nc_zt=23&_nc_ht=scontent.fcnx4-1.fna&_nc_gid=A8mI7mJTRhDAwdICXYL-Wsi&oh=00_AYGtDBSL76AMKD5_6SN-oQU5I8d9bCiHVkdo5VptqaabFA&oe=67D22A36" alt="รูปเรา" class="photo-frame rounded-lg">
+            </div>
+        </div>
+
+        <!-- Birthday message -->
+        <div class="bg-white bg-opacity-80 rounded-xl shadow-xl p-6 mb-8 animate__animated animate__fadeInUp">
+            <p class="text-lg text-gray-800 leading-relaxed mb-4">
+                สุขสันต์วันเกิดน้าา Happy Birthday ขอให้มีความสุขมากๆ มีเงินใช้ตลอดทั้งปี คิดสิ่งใดขอให้สมปรารถนา สุขภาพแข็งแรงนะ จุ้บๆ
+            </p>
+         
+            <p class="text-lg text-gray-800 leading-relaxed font-semibold">
+                ฝน,<br>
+                ❤️❤️❤️
+            </p>
+        </div>
+
+        <!-- Birthday cake -->
+        <div class="flex flex-col items-center justify-center mb-8 animate__animated animate__zoomIn">
+            <div class="cake text-7xl md:text-8xl mb-4">🎂</div>
+            <button id="blowCandle" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition hover:scale-105">
+                เป่าเทียน! 🎉
+            </button>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center py-6">
+            <p class="text-pink-900 font-medium">สุขสันต์วันเกิด</p>
+            <p class="text-pink-900 text-sm mt-2">รักนะ ❤️</p>
+        </div>
+    </div>
+
+    <script>
+        // Create balloons
+        function createBalloons() {
+            const colors = ['#FF5252', '#FF4081', '#E040FB', '#7C4DFF', '#536DFE', '#448AFF', '#40C4FF', '#18FFFF'];
+            const balloonEmojis = ['🎈', '🎈', '🎈', '🎁', '🎉', '✨', '💝', '💖'];
+            const balloonContainer = document.getElementById('balloons');
+            
+            for (let i = 0; i < 20; i++) {
+                const balloon = document.createElement('div');
+                balloon.className = 'balloon';
+                
+                // Random emoji from balloonEmojis
+                const emoji = balloonEmojis[Math.floor(Math.random() * balloonEmojis.length)];
+                balloon.innerHTML = `<span style="font-size: 30px;">${emoji}</span>`;
+                
+                // Random position
+                const left = Math.random() * 100;
+                const top = Math.random() * 100;
+                
+                balloon.style.left = `${left}%`;
+                balloon.style.top = `${top}%`;
+                
+                // Random animation delay
+                balloon.style.animationDelay = `${Math.random() * 5}s`;
+                
+                balloonContainer.appendChild(balloon);
+            }
+        }
+
+        // Slideshow for photos
+        function startSlideshow() {
+            const photos = document.querySelectorAll('.photo');
+            let currentIndex = 0;
+            
+            setInterval(() => {
+                photos[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % photos.length;
+                photos[currentIndex].classList.add('active');
+            }, 3000);
+        }
+
+        // Confetti effect for blowing candle
+        function createConfetti() {
+            const confettiContainer = document.body;
+            const colors = ['#FF5252', '#FF4081', '#E040FB', '#7C4DFF', '#536DFE', '#448AFF', '#40C4FF', '#18FFFF', '#FFD740', '#FFAB40'];
+            
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                
+                const size = Math.random() * 10 + 5;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                
+                confetti.style.width = `${size}px`;
+                confetti.style.height = `${size}px`;
+                confetti.style.backgroundColor = color;
+                
+                // Random shape
+                if (Math.random() > 0.5) {
+                    confetti.style.borderRadius = '50%';
+                } else {
+                    confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                }
+                
+                confetti.style.left = `${Math.random() * 100}vw`;
+                confetti.style.top = '-20px';
+                
+                confettiContainer.appendChild(confetti);
+                
+                gsap.to(confetti, {
+                    y: `${window.innerHeight + 100}px`,
+                    x: `${(Math.random() - 0.5) * 200}px`,
+                    rotation: Math.random() * 360,
+                    duration: Math.random() * 2 + 1,
+                    ease: 'power1.out',
+                    onComplete: () => {
+                        confettiContainer.removeChild(confetti);
+                    }
+                });
+            }
+        }
+
+        // Initialize everything when document is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            createBalloons();
+            startSlideshow();
+            
+            document.getElementById('blowCandle').addEventListener('click', function() {
+                createConfetti();
+                const cake = document.querySelector('.cake');
+                cake.textContent = '🍰';
+                
+                // Show celebration message
+                const message = document.createElement('div');
+                message.className = 'fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-pink-600 text-white text-2xl md:text-3xl p-6 rounded-lg shadow-2xl z-50 animate__animated animate__zoomIn';
+                message.innerHTML = 'สุขสันต์วันเกิด! <br>ขอให้มีความสุขมากๆ 🎉';
+                document.body.appendChild(message);
+                
+                setTimeout(() => {
+                    message.classList.remove('animate__zoomIn');
+                    message.classList.add('animate__zoomOut');
+                    setTimeout(() => {
+                        document.body.removeChild(message);
+                    }, 1000);
+                }, 3000);
+            });
+        });
+    </script>
+</body>
+</html>
